@@ -5,8 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'ls -ltr'     // I want to undersand what are the files 
-                sh 'pwd'         // I want to know what is the working directory
+                sh '''
+                  ls -ltr
+                  pwd
+                  echo "Hello Script
+                '''
             }
         }
         stage('Test') {
