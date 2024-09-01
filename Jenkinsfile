@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'ls -ltr'     // I want to undersand what are the files 
+                sh 'pwd'         // I want to know what is the working directory
             }
         }
         stage('Test') {
@@ -15,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                error 'this is failed'
+                // error 'this is failed'
             }
         }
     }
