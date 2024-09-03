@@ -3,7 +3,7 @@ pipeline {
     options {
         timeout(time: 1, unit: 'HOURS') 
     }
-     environment { 
+     environment {         // this is accessible for every stage
         USER = 'sarath'
     }
     stages {
@@ -27,6 +27,14 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 // error 'this is failed'
+            }
+        }
+        stage('Example') {
+            environment {      // this is accessible for only this particular stage
+                AUTH = credentials('ssh-auth') 
+            }
+            steps {
+                sh 'printenv'
             }
         }
     }
