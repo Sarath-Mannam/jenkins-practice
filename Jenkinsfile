@@ -73,6 +73,14 @@ pipeline {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
         }
+        stage('PROD Deploy'){   // This stage should run if the branch is master
+            when {
+                branch 'master'
+            }
+            steps{
+                echo "deploying to PROD"
+            }
+        }
     }
 
     post { 
