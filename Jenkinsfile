@@ -3,9 +3,9 @@ pipeline {
     options {
         timeout(time: 1, unit: 'HOURS') 
     }
-    triggers {
-        cron('* * * * *')
-    }
+    // triggers {
+    //     cron('* * * * *')
+    // }
      environment {         // this is accessible for every stage
         USER = 'sarath'
     }
